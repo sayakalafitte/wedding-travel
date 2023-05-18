@@ -1,0 +1,622 @@
+@charset "UTF-8";
+
+
+html{
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Montserrat', 'Italiana';
+    font-weight: 300;
+	-webkit-font-feature-settings: 'palt';
+	font-feature-settings: 'palt';
+    color: #857B74;
+    margin: 0;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+a:hover {
+    opacity: 0.6;
+}
+
+ul li{
+    list-style: none;
+}
+
+/* Utility */
+p {
+    font-size: 1.4em;
+    margin: 0;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.title, .title_subtitle{
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 400;
+}
+
+.sp{
+    display: block;
+}
+
+.pc{
+    display: none;
+}
+
+
+/*---------------------------
+
+ヘッダー
+
+----------------------------*/
+
+
+.header {
+  background-color: white;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.header__inner {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: inherit;
+  position: relative;
+}
+
+.header__title{
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 400;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.header__nav {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    background-color: #fff;
+    transition: ease .4s;
+}
+
+.nav-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+}
+
+  /* ナビのリンク */
+.nav-items__item a {
+    color: #857B74;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+}
+.nav-items__item:last-child a {
+    margin-top: 80px;
+}
+
+/* ハンバーガーメニュー */
+
+.header__hamburger {
+    width: 48px;
+    height: 100%;
+}
+  
+.hamburger {
+    background-color: transparent;
+    border-color: transparent;
+    z-index: 9999;
+}
+/* ハンバーガーメニューの線 */
+.hamburger span {
+    width: 100%;
+    height: 1px;
+    background-color: #857B74;
+    position: relative;
+    transition: ease .4s;
+    display: block;
+}
+  
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+  
+.hamburger span:nth-child(2) {
+    margin: 8px 0;
+}
+  
+.hamburger span:nth-child(3) {
+    top: 0;
+}
+
+/* ハンバーガーメニュークリック後のスタイル */
+.header__nav.active {
+    transform: translateX(0);
+}
+  
+.hamburger.active span:nth-child(1) {
+    top: 5px;
+    transform: rotate(45deg);
+}
+  
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    top: -13px;
+    transform: rotate(-45deg);
+}
+
+.button a{
+    display: inline-block;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 16px;
+    background: #857B74;
+    padding: 14px 30px;
+    border-radius: 5px;
+    transition: .3s;
+    vertical-align: center;
+    letter-spacing:0.1em;
+    margin-top: 40px;
+}
+
+
+
+
+
+
+
+
+/*---------------------------
+
+Main
+
+----------------------------*/
+
+.main{
+    display: -webkit-inline-box;
+    text-align: center;
+    position: relative;
+    margin-top: 62px
+}
+
+.title{
+    font-size: 3em;
+}
+
+.text_main{
+    display: block;
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+}
+/*---------------------------
+
+Section
+
+----------------------------*/
+.section{
+    display: block;
+    padding: 80px 0 120px;
+}
+.section-inner{
+    padding: 0 30px;
+}
+.title_subtitle{
+    font-size: 2.4em;
+}
+.section-img{
+    width: 100%;
+    height: auto;
+    margin: 40px auto;
+}
+.text_details{
+    margin-top: 30px;
+}
+.story{
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 400;
+    font-size: 1.4em;
+}
+.right{
+    margin-top: 30px;
+    text-align: right;
+}
+.bkg_brown{
+    background: #857B74;
+    color: #fff;
+}
+.story_details {
+    line-height: 1.4em;
+    line-height: 2rem;
+}
+.fa-minus{
+    margin-bottom: 30px;
+}
+.text_details{
+    line-height: 1.6em;;
+}
+/*===================================
+スライダーのためのcss
+===================================*/
+.slider_sp {
+    position:relative;
+    padding: 0;
+    z-index: 1;
+    /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
+    height: 50vh;/*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+}
+/*　背景画像設定　*/
+.slider_sp__item01 {
+    background:url(../images/ourstory3__sp.png);
+}
+
+.slider_sp__item02 {
+    background:url(../images/ourstory4__sp.png);
+}
+
+.slider_sp__item03 {
+    background:url(../images/ourstory5__sp.png);
+}
+.slider_sp__item {
+    width: 100%;/*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
+    height:50vh;/*各スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+    background-repeat: no-repeat;/*背景画像をリピートしない*/
+    background-position: center;/*背景画像の位置を中央に*/
+    background-size: cover;/*背景画像が.slider-item全体を覆い表示*/
+}
+
+/*矢印の設定*/
+
+.slick-prev, 
+.slick-next {
+    position: absolute;
+	z-index: 3;
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #fff;/*矢印の色*/
+    border-right: 2px solid #fff;/*矢印の色*/
+    height: 25px;
+    width: 25px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left:2.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right:2.5%;
+    transform: rotate(45deg);
+}
+.title_subtitle__stay{
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: 30px;
+}
+.stay-list__items{
+    margin-bottom: 100px;
+}
+
+
+.rsvp .title_subtitle{
+    margin-bottom: 10px;
+}
+.rsvp .text_details{
+    margin-top: 0;
+}
+
+
+/*---------------------------
+Form
+----------------------------*/
+.form-item{
+    margin-bottom: 30px;
+    justify-content: center;
+}
+.form-title{
+    margin-bottom: 18px;
+    font-size: 1.6em;
+    white-space: nowrap;
+}
+.form-detail{
+    margin: 0;
+}
+
+.form-parts{
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    border: solid 1px #F4F2F0;
+    background-color: #F4F2F0;
+}
+.form-parts-text{
+    width: 100%;
+    padding: 9px 8px;
+    border-radius: 3px;
+    color: #857B74;
+    font-size: 1.4rem;
+}
+.form-parts-cb {
+    width: 16px;
+    height: 16px;
+    margin: 0 7px 0 0;
+    vertical-align: -2px;
+}
+.btn-submit{
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.section-footer{
+    margin-bottom: 120px;
+}
+
+
+/*---------------------------
+
+Footer
+
+----------------------------*/
+.footer{
+    background-color: #857B74;
+    padding: 110px 0;
+    color: #fff;
+}
+.footer_menu{
+    padding: 40px;
+}
+.footer li{
+    margin-top: 30px;
+}
+.footer .button a{
+    padding: 14px 55px;
+    color: #857B74;
+    background: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+  @media screen and (min-width: 750px) {
+
+        .sp{
+            display: none;
+        }
+
+        .pc{
+            display: block;
+        }
+        p{
+            font-size: 2em;
+        }
+        .inner {
+            max-width: 1140px;
+            margin: auto;
+        }
+
+        /*---------------------------
+
+        Header
+
+        ----------------------------*/
+
+        .header__inner {
+            padding: 0 15px;
+          }
+        .header__nav {
+            position: static;
+            transform: initial;
+            background-color: inherit;
+            height: inherit;
+            display: flex;
+            justify-content: end;
+            width: 50%;
+        }
+        .nav-items {
+            position: inherit;
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+            display: flex;
+            align-items: center;
+        }
+        .nav-items__item{
+            margin-left: 30px;
+            white-space: nowrap;
+        }
+        .nav-items__item a {
+            margin-bottom: 0;
+            font-size: 1.8em;
+        }
+        .hamburger {
+            display: none;
+        }
+        .nav-items__item:last-child a {
+            margin: 0;
+        }
+        .button a{
+            padding: 10px 35px;
+        }
+
+        .nav-items__item.current>a {
+            padding:8px;
+            border-bottom: solid 1px #857B74;
+            color: #857B74;
+        }
+
+        /*---------------------------
+
+        Section
+
+        ----------------------------*/
+        .top_details{
+            display: flex;
+            align-items: center;
+        }
+        .reverse {
+            flex-direction: row-reverse;
+        }
+        .top_details__info{
+            width: 458px;
+            padding: 100px 90px;
+        }
+        .title_subtitle {
+            font-size: 3em;
+            margin: 40px 0 65px;
+        }
+        .section-img_home{
+            max-width: 390px;
+            height: auto;
+            padding: 0 90px;
+        }
+        .slider_pc{
+            display: flex;
+            padding: 0;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+        .slider_pc img{
+            width: 100%;
+            height: auto;
+        }
+        
+        .story p{
+            width: 80%;
+            height: auto;
+        }
+        .right{
+            float: right;
+            margin-top: 60px;
+        }
+
+        .bkg_brown{
+            margin-top: 120px;
+        }
+
+        .section_story{
+            display: flex;
+            align-items: center;
+        }
+        .section_story img{
+            width: 40%;
+            height: auto;
+            padding: 0 60px;
+        }
+        .fa-minus{
+            margin-bottom: 40px;
+        }
+        .story_details{
+            line-height: 2.4rem;
+            padding: 0 60px;
+        }
+        .title_subtitle__stay{
+            font-size: 2em;
+            margin: 40px 10px 0;
+        }
+        .stay-list{
+            display: flex;
+            margin: 0 auto;
+            padding: 0;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .text_details{
+            font-size: 1.4em;
+            line-height: 2rem;
+            margin-top: 40px;
+        }
+
+        /*---------------------------
+        Form
+        ----------------------------*/
+        .form{
+            margin: 0 auto;
+        }
+        .form-item {
+            display: flex;
+            margin-bottom: 24px;
+        }
+        .form-title {
+            width: 350px;
+            margin: 0 30px 0 0;
+            padding: 10px 0;
+            text-align: right;
+        }
+        .form-detail {
+            width: 460px;
+        }
+        .form-attendance{
+            vertical-align: -8px;
+        }
+
+
+
+
+
+        /*---------------------------
+
+        Footer
+
+        ----------------------------*/
+        .footer{
+            padding: 80px;
+        }
+        .footer .title_subtitle{
+            margin-bottom: 10px;
+        }
+        .footer p{
+            font-size: 1.4em;
+        }
+        .footer_menu{
+            display: flex;
+            padding: 40px;
+            width: 50%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .footer_menu__item{
+            margin: 0 auto;
+        }
+
+
+
+  }
